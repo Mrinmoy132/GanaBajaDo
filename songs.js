@@ -96,14 +96,14 @@
 
 
 async function getsongs() {
-    let songs = await fetch("/musics");  //fetching data from the server/filesystem
+    let songs = await fetch("musics/");  //fetching data from the server/filesystem
     let response = await songs.text();                                              //converting the songs to html text format
     let newdiv = document.createElement("div");
     newdiv.innerHTML = response;                                                    //html text to html
     let a = newdiv.getElementsByTagName("a");                                       //filtering all the <a> elements from html 
     const songs_arr = [];
     for (const element of a) {
-        if (element.href.endsWith(".mp3")) {                                        //all the elements ended with .mp3
+        if (element.href.endsWith(".jpg")) {                                        //all the elements ended with .mp3
             songs_arr.push(element.href);
         }
     }
