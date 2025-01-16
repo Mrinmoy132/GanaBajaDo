@@ -1,98 +1,98 @@
 // nav bar
 
-let searchbar_firstdiv = document.getElementById("search-bar").firstElementChild;
+// let searchbar_firstdiv = document.getElementById("search-bar").firstElementChild;
 
-//input element e focus korle
-searchbar_firstdiv.nextElementSibling.addEventListener("focus", () => {
-    document.getElementById("search-bar").style.outline = '2px solid white';
-    searchbar_firstdiv.firstElementChild.style.filter = 'invert(1)';
-});
-searchbar_firstdiv.nextElementSibling.addEventListener("blur", () => {
-    document.getElementById("search-bar").style.outline = 'none';
-    searchbar_firstdiv.firstElementChild.style.filter = 'invert(0.7)';
-});
-
-
-
-//search button e click korle
-searchbar_firstdiv.firstElementChild.addEventListener('click', () => {
-    document.getElementById("search-bar").style.outline = '2px solid white';
-    searchbar_firstdiv.firstElementChild.style.filter = 'invert(1)';
-    searchbar_firstdiv.nextElementSibling.focus();
-});
-
-searchbar_firstdiv.firstElementChild.addEventListener("blur", () => {
-    document.getElementById("search-bar").style.outline = 'none';
-    searchbar_firstdiv.firstElementChild.style.filter = 'invert(0.7)';
-});
-
-
-//searchb button e mouseover korle
-searchbar_firstdiv.firstElementChild.addEventListener('mouseover', () => {
-    searchbar_firstdiv.firstElementChild.style.filter = 'invert(1)';
-})
-searchbar_firstdiv.firstElementChild.addEventListener('mouseout', () => {
-    searchbar_firstdiv.firstElementChild.style.filter = 'invert(0.7)';
-});
-
-
-//searchbar puratate mouseover korle
-document.getElementById("search-bar").addEventListener('mouseover', () => {
-    document.getElementById("search-bar").style.backgroundColor = 'rgb(50,50,50)';
-    searchbar_firstdiv.nextElementSibling.style.backgroundColor = 'rgb(50,50,50)';
-});
-
-document.getElementById("search-bar").addEventListener('mouseout', () => {
-    document.getElementById("search-bar").style.backgroundColor = 'rgb(30, 30, 30)';
-    searchbar_firstdiv.nextElementSibling.style.backgroundColor = 'rgb(30, 30, 30)';
-});
+// //input element e focus korle
+// searchbar_firstdiv.nextElementSibling.addEventListener("focus", () => {
+//     document.getElementById("search-bar").style.outline = '2px solid white';
+//     searchbar_firstdiv.firstElementChild.style.filter = 'invert(1)';
+// });
+// searchbar_firstdiv.nextElementSibling.addEventListener("blur", () => {
+//     document.getElementById("search-bar").style.outline = 'none';
+//     searchbar_firstdiv.firstElementChild.style.filter = 'invert(0.7)';
+// });
 
 
 
-// main-left
-let left_main_library = document.getElementById("your-library-section");
-let left_main_library_svg = document.getElementById("main-library-svg");
-let left_main_library_plus = document.getElementById("your-library-section").lastElementChild;
+// //search button e click korle
+// searchbar_firstdiv.firstElementChild.addEventListener('click', () => {
+//     document.getElementById("search-bar").style.outline = '2px solid white';
+//     searchbar_firstdiv.firstElementChild.style.filter = 'invert(1)';
+//     searchbar_firstdiv.nextElementSibling.focus();
+// });
+
+// searchbar_firstdiv.firstElementChild.addEventListener("blur", () => {
+//     document.getElementById("search-bar").style.outline = 'none';
+//     searchbar_firstdiv.firstElementChild.style.filter = 'invert(0.7)';
+// });
+
+
+// //searchb button e mouseover korle
+// searchbar_firstdiv.firstElementChild.addEventListener('mouseover', () => {
+//     searchbar_firstdiv.firstElementChild.style.filter = 'invert(1)';
+// })
+// searchbar_firstdiv.firstElementChild.addEventListener('mouseout', () => {
+//     searchbar_firstdiv.firstElementChild.style.filter = 'invert(0.7)';
+// });
+
+
+// //searchbar puratate mouseover korle
+// document.getElementById("search-bar").addEventListener('mouseover', () => {
+//     document.getElementById("search-bar").style.backgroundColor = 'rgb(50,50,50)';
+//     searchbar_firstdiv.nextElementSibling.style.backgroundColor = 'rgb(50,50,50)';
+// });
+
+// document.getElementById("search-bar").addEventListener('mouseout', () => {
+//     document.getElementById("search-bar").style.backgroundColor = 'rgb(30, 30, 30)';
+//     searchbar_firstdiv.nextElementSibling.style.backgroundColor = 'rgb(30, 30, 30)';
+// });
 
 
 
-//library r svg re mouseover korle
-left_main_library.firstElementChild.addEventListener('mouseenter', () => {
-    left_main_library_svg.style.filter = 'invert(1)';
-    left_main_library_svg.nextElementSibling.style.filter = 'invert(0)';
-
-});
-
-left_main_library.firstElementChild.addEventListener('mouseleave', () => {
-    left_main_library_svg.style.filter = 'invert(0.7)';
-    left_main_library_svg.nextElementSibling.style.filter = 'invert(0.3)';
-
-});
+// // main-left
+// let left_main_library = document.getElementById("your-library-section");
+// let left_main_library_svg = document.getElementById("main-library-svg");
+// let left_main_library_plus = document.getElementById("your-library-section").lastElementChild;
 
 
-//plus er upore mouseover korle + in css also hover effect ache
-left_main_library_plus.addEventListener('mouseover', () => {
-    left_main_library_plus.firstElementChild.style.filter = 'invert(1)';
-});
-left_main_library_plus.addEventListener('mouseout', () => {
-    left_main_library_plus.firstElementChild.style.filter = 'invert(0.7)';
-});
+
+// //library r svg re mouseover korle
+// left_main_library.firstElementChild.addEventListener('mouseenter', () => {
+//     left_main_library_svg.style.filter = 'invert(1)';
+//     left_main_library_svg.nextElementSibling.style.filter = 'invert(0)';
+
+// });
+
+// left_main_library.firstElementChild.addEventListener('mouseleave', () => {
+//     left_main_library_svg.style.filter = 'invert(0.7)';
+//     left_main_library_svg.nextElementSibling.style.filter = 'invert(0.3)';
+
+// });
 
 
-let language_changing_innerdiv = document.getElementById("language-changing-innerdiv");
+// //plus er upore mouseover korle + in css also hover effect ache
+// left_main_library_plus.addEventListener('mouseover', () => {
+//     left_main_library_plus.firstElementChild.style.filter = 'invert(1)';
+// });
+// left_main_library_plus.addEventListener('mouseout', () => {
+//     left_main_library_plus.firstElementChild.style.filter = 'invert(0.7)';
+// });
 
-language_changing_innerdiv.addEventListener('mouseover', () => {
-    language_changing_innerdiv.style.border = '1px solid rgb(255, 255, 255)';
-    language_changing_innerdiv.style.transform = 'scale(1.05)';
-    // language_changing_innerdiv.firstElementChild.style.transform = 'scale(1.1)'
-    // language_changing_innerdiv.lastElementChild.style.transform = 'scale(1.1)'
-});
-language_changing_innerdiv.addEventListener('mouseout', () => {
-    language_changing_innerdiv.style.border = '1px solid rgba(255, 255, 255, 0.462)';
-    language_changing_innerdiv.style.transform = 'scale(1)';
-    // language_changing_innerdiv.firstElementChild.style.transform = 'scale(1)'
-    // language_changing_innerdiv.lastElementChild.style.transform = 'scale(1)'
-});
+
+// let language_changing_innerdiv = document.getElementById("language-changing-innerdiv");
+
+// language_changing_innerdiv.addEventListener('mouseover', () => {
+//     language_changing_innerdiv.style.border = '1px solid rgb(255, 255, 255)';
+//     language_changing_innerdiv.style.transform = 'scale(1.05)';
+//     // language_changing_innerdiv.firstElementChild.style.transform = 'scale(1.1)'
+//     // language_changing_innerdiv.lastElementChild.style.transform = 'scale(1.1)'
+// });
+// language_changing_innerdiv.addEventListener('mouseout', () => {
+//     language_changing_innerdiv.style.border = '1px solid rgba(255, 255, 255, 0.462)';
+//     language_changing_innerdiv.style.transform = 'scale(1)';
+//     // language_changing_innerdiv.firstElementChild.style.transform = 'scale(1)'
+//     // language_changing_innerdiv.lastElementChild.style.transform = 'scale(1)'
+// });
 
 
 // async function getsongs() {
