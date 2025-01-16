@@ -111,7 +111,7 @@ language_changing_innerdiv.addEventListener('mouseout', () => {
 // }
 
 {
-  "songs": [
+  "songs" = [
     "abhi_mujh_mein_kahin.mp3",
     "afreen_afreen.mp3",
     "o_rangrez.mp3",
