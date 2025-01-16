@@ -147,7 +147,7 @@ async function getsongs() {
 // }
 
 (async () => {
-    const songs = await getSongs();
+    const songs = await getsongs();
     console.log(songs);
 })();
 
