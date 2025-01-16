@@ -95,20 +95,20 @@ language_changing_innerdiv.addEventListener('mouseout', () => {
 });
 
 
-async function getsongs(folder) {
-    let songs = await fetch(`${folder}`);  //fetching data from the server/filesystem
-    let response = await songs.text();  //converting the songs to html text format
-    let newdiv = document.createElement("div");
-    newdiv.innerHTML = response;                                                    //html text to html
-    let a = newdiv.getElementsByTagName("a");                                       //filtering all the <a> elements from html 
-    const songs_arr = [];
-    for (const element of a) {
-        if (element.href.endsWith(".jpg")) {                                        //all the elements ended with .mp3
-            songs_arr.push(element.href);
-        }
-    }
-    return songs_arr;                                                               //returning the songs as an array
-}
+// async function getsongs(folder) {
+//     let songs = await fetch(`${folder}`);  //fetching data from the server/filesystem
+//     let response = await songs.text();  //converting the songs to html text format
+//     let newdiv = document.createElement("div");
+//     newdiv.innerHTML = response;                                                    //html text to html
+//     let a = newdiv.getElementsByTagName("a");                                       //filtering all the <a> elements from html 
+//     const songs_arr = [];
+//     for (const element of a) {
+//         if (element.href.endsWith(".jpg")) {                                        //all the elements ended with .mp3
+//             songs_arr.push(element.href);
+//         }
+//     }
+//     return songs_arr;                                                               //returning the songs as an array
+// }
 
 // {
 //   "songs" : [
