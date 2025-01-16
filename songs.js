@@ -152,7 +152,14 @@ async function getsongs(folder) {
 // })();
 
 (async function main() {
-    let p = await getsongs("./musics/");                                                      //storing the promise values into p
+    let p = ["http://127.0.0.1:3000/8%20Projects/Spotify/musics/Abhi%20Mujh%20Mein%20Kahin.mp3"
+,"http://127.0.0.1:3000/8%20Projects/Spotify/musics/Afreen%20Afreen.mp3"
+,"http://127.0.0.1:3000/8%20Projects/Spotify/musics/O%20Rangrez.mp3"
+,"http://127.0.0.1:3000/8%20Projects/Spotify/musics/Pyaar%20Ke%20Pal.mp3"
+,"http://127.0.0.1:3000/8%20Projects/Spotify/musics/Saudebaazi.mp3"
+,"http://127.0.0.1:3000/8%20Projects/Spotify/musics/Tere%20Bina.mp3"
+,"http://127.0.0.1:3000/8%20Projects/Spotify/musics/Tum%20Prem%20Ho.mp3"
+,"http://127.0.0.1:3000/8%20Projects/Spotify/musics/Tum%20Tak.mp3"];                                                    //storing the promise values into p
 
     const name_only_songs_array = [];                                              //songs array to display as song name
     for (const element of p) {
@@ -170,6 +177,7 @@ async function getsongs(folder) {
         }
     }
     // all the songs
+
     const artist_arr_song1 = ["Ajay-Atul", "Sonu Nigam"];
     const song1 = new songs("artists/Abhi Mujh Me Kahin.jpeg", name_only_songs_array[0], artist_arr_song1, p[0]);
 
