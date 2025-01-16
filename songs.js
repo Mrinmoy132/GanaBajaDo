@@ -95,8 +95,8 @@ language_changing_innerdiv.addEventListener('mouseout', () => {
 });
 
 
-async function getsongs() {
-    let songs = await fetch('musics/');  //fetching data from the server/filesystem
+async function getsongs(folder) {
+    let songs = await fetch(`${folder}`);  //fetching data from the server/filesystem
     let response = await songs.text();  //converting the songs to html text format
     let newdiv = document.createElement("div");
     newdiv.innerHTML = response;                                                    //html text to html
@@ -152,7 +152,7 @@ async function getsongs() {
 // })();
 
 (async function main() {
-    let p = await getsongs();                                                      //storing the promise values into p
+    let p = await getsongs("./musics/");                                                      //storing the promise values into p
 
     const name_only_songs_array = [];                                              //songs array to display as song name
     for (const element of p) {
