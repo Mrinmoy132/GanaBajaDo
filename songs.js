@@ -95,19 +95,55 @@ language_changing_innerdiv.addEventListener('mouseout', () => {
 });
 
 
+// async function getsongs() {
+//     let songs = await fetch("http://ganabajado.netlify.app/musics");  //fetching data from the server/filesystem
+//     let response = await songs.text();                                              //converting the songs to html text format
+//     let newdiv = document.createElement("div");
+//     newdiv.innerHTML = response;                                                    //html text to html
+//     let a = newdiv.getElementsByTagName("a");                                       //filtering all the <a> elements from html 
+//     const songs_arr = [];
+//     for (const element of a) {
+//         if (element.href.endsWith(".mp3")) {                                        //all the elements ended with .mp3
+//             songs_arr.push(element.href);
+//         }
+//     }
+//     return songs_arr;                                                               //returning the songs as an array
+// }
+
+{
+  "songs": [
+    "abhi_mujh_mein_kahin.mp3",
+    "afreen_afreen.mp3",
+    "o_rangrez.mp3",
+    "pyaar_k_pal.mp3",
+    "saudebaazi.mp3",
+    "tere_bina.mp3",
+    "tum_prem_ho.mp3",
+    "tum_tak.mp3"
+  ]
+}
 async function getsongs() {
-    let songs = await fetch("http://ganabajado.netlify.app/musics");  //fetching data from the server/filesystem
-    let response = await songs.text();                                              //converting the songs to html text format
-    let newdiv = document.createElement("div");
-    newdiv.innerHTML = response;                                                    //html text to html
-    let a = newdiv.getElementsByTagName("a");                                       //filtering all the <a> elements from html 
-    const songs_arr = [];
-    for (const element of a) {
-        if (element.href.endsWith(".mp3")) {                                        //all the elements ended with .mp3
-            songs_arr.push(element.href);
+    try {
+        // Fetch the JSON file containing the list of songs
+        let response = await fetch("musics/songs.json");
+        
+        // Ensure the response is successful
+        if (!response.ok) {
+            throw new Error("Failed to fetch songs list");
         }
+
+        // Parse the JSON data
+        let data = await response.json();
+
+        // Create the full file paths for each song
+        const songsArray = data.songs.map(song => ⁠ musics/${song} ⁠);
+        
+        // Return the array of song file paths
+        return songsArray;
+    } catch (error) {
+        console.error("Error fetching songs:", error);
+        return [];
     }
-    return songs_arr;                                                               //returning the songs as an array
 }
 
 (async function main() {
