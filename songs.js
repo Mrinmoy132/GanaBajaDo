@@ -475,12 +475,14 @@ language_changing_innerdiv.addEventListener('mouseout', () => {
                         playpause.src = "svg/pause.svg";
                         play_button_library_artist();
                         play_button_artist();
+                        plus_bar();
                     }
                     else {
                         e.lastElementChild.src = "svg/play.svg";
                         audio.pause();
                         playpause.src = "svg/play.svg";
                         play_button_all();
+                        plus_bar();
                     }
                 })
             })
