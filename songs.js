@@ -571,7 +571,7 @@ language_changing_innerdiv.addEventListener('mouseout', () => {
                         play_button_all();
                         e.lastElementChild.src = "svg/pause.svg";
                         playpause.src = "svg/pause.svg";
-                        // library_play_button();
+                        play_button_library_artist();
                         // artist_list_play_button();
                     }
                     else {
