@@ -95,23 +95,30 @@ language_changing_innerdiv.addEventListener('mouseout', () => {
 });
 
 
-async function getsongs() {
-    let songs = await fetch("musics/");                                             //fetching data from the server/filesystem
-    let response = await songs.text();                                              //converting the songs to html text format
-    let newdiv = document.createElement("div");
-    newdiv.innerHTML = response;                                                    //html text to html
-    let a = newdiv.getElementsByTagName("a");                                       //filtering all the <a> elements from html 
-    const songs_arr = [];
-    for (const element of a) {
-        if (element.href.endsWith(".mp3")) {                                        //all the elements ended with .mp3
-            songs_arr.push(element.href);
-        }
-    }
-    return songs_arr;                                                               //returning the songs as an array
-}
+// async function getsongs() {
+//     let songs = await fetch("musics/");                                             //fetching data from the server/filesystem
+//     let response = await songs.text();                                              //converting the songs to html text format
+//     let newdiv = document.createElement("div");
+//     newdiv.innerHTML = response;                                                    //html text to html
+//     let a = newdiv.getElementsByTagName("a");                                       //filtering all the <a> elements from html 
+//     const songs_arr = [];
+//     for (const element of a) {
+//         if (element.href.endsWith(".mp3")) {                                        //all the elements ended with .mp3
+//             songs_arr.push(element.href);
+//         }
+//     }
+//     return songs_arr;                                                               //returning the songs as an array
+// }
 
 (async function main() {
-    let p = await getsongs();                                                      //storing the promise values into p  
+    let p = ["http://127.0.0.1:3000/8%20Projects/Spotify/musics/Abhi%20Mujh%20Mein%20Kahin.mp3",
+    "http://127.0.0.1:3000/8%20Projects/Spotify/musics/Afreen%20Afreen.mp3",
+    "http://127.0.0.1:3000/8%20Projects/Spotify/musics/O%20Rangrez.mp3",
+    "http://127.0.0.1:3000/8%20Projects/Spotify/musics/Pyaar%20Ke%20Pal.mp3",
+    "http://127.0.0.1:3000/8%20Projects/Spotify/musics/Saudebaazi.mp3",
+    "http://127.0.0.1:3000/8%20Projects/Spotify/musics/Tere%20Bina.mp3",
+    "http://127.0.0.1:3000/8%20Projects/Spotify/musics/Tum%20Prem%20Ho.mp3",
+    "http://127.0.0.1:3000/8%20Projects/Spotify/musics/Tum%20Tak.mp3"];                                                     //storing the promise values into p  
     const name_only_songs_array = [];                                              //songs array to display as song name
     for (const element of p) {
         let x = element.slice(element.indexOf("musics/") + 7).replaceAll("%20", " ").replaceAll(".mp3", "");
@@ -125,14 +132,7 @@ async function getsongs() {
             this.song_link = song_link;
         }
     }
-    // ["http://127.0.0.1:3000/8%20Projects/Spotify/musics/Abhi%20Mujh%20Mein%20Kahin.mp3",
-    // "http://127.0.0.1:3000/8%20Projects/Spotify/musics/Afreen%20Afreen.mp3",
-    // "http://127.0.0.1:3000/8%20Projects/Spotify/musics/O%20Rangrez.mp3",
-    // "http://127.0.0.1:3000/8%20Projects/Spotify/musics/Pyaar%20Ke%20Pal.mp3",
-    // "http://127.0.0.1:3000/8%20Projects/Spotify/musics/Saudebaazi.mp3",
-    // "http://127.0.0.1:3000/8%20Projects/Spotify/musics/Tere%20Bina.mp3",
-    // "http://127.0.0.1:3000/8%20Projects/Spotify/musics/Tum%20Prem%20Ho.mp3",
-    // "http://127.0.0.1:3000/8%20Projects/Spotify/musics/Tum%20Tak.mp3"]
+
     // all the songs
     const artist_arr_song1 = ["Ajay-Atul", "Sonu Nigam"];
     const song1 = new songs("artists/Abhi Mujh Me Kahin.jpeg", name_only_songs_array[0], artist_arr_song1, p[0]);
