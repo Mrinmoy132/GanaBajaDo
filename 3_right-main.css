@@ -6,6 +6,10 @@
     position: relative;
 }
 
+#right-main::-webkit-scrollbar {
+    display: none;
+}
+
 
 .all_the_rows {
     height: 200px;
