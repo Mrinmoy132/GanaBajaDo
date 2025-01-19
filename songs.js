@@ -94,17 +94,17 @@ language_changing_innerdiv.addEventListener('mouseout', () => {
 // }
 
 (async function main() {
-    let p = ["http://127.0.0.1:3000/8%20Projects/Spotify/musics/Abhi%20Mujh%20Mein%20Kahin.mp3",
-    "http://127.0.0.1:3000/8%20Projects/Spotify/musics/Afreen%20Afreen.mp3",
-    "http://127.0.0.1:3000/8%20Projects/Spotify/musics/O%20Rangrez.mp3",
-    "http://127.0.0.1:3000/8%20Projects/Spotify/musics/Pyaar%20Ke%20Pal.mp3",
-    "http://127.0.0.1:3000/8%20Projects/Spotify/musics/Saudebaazi.mp3",
-    "http://127.0.0.1:3000/8%20Projects/Spotify/musics/Tere%20Bina.mp3",
-    "http://127.0.0.1:3000/8%20Projects/Spotify/musics/Tum%20Prem%20Ho.mp3",
-    "http://127.0.0.1:3000/8%20Projects/Spotify/musics/Tum%20Tak.mp3"];                                                        //storing the promise values into p  
+    let p = ["musics/Abhi Mujh Mein Kahin.mp3",
+    "musics/Afreen Afreen.mp3",
+    "musics/O Rangrez.mp3",
+    "musics/Pyaar Ke Pal.mp3",
+    "musics/Saudebaazi.mp3",
+    "musics/Tere Bina.mp3",
+    "musics/Tum Prem Ho.mp3",
+    "musics/Tum Tak.mp3"]                                                         //storing the promise values into p  
     const name_only_songs_array = [];                                              //songs array to display as song name
     for (const element of p) {
-        let x = element.slice(element.indexOf("musics/") + 7).replaceAll("%20", " ").replaceAll(".mp3", "");
+        let x = element.slice(element.indexOf("musics/") + 7).replaceAll(".mp3", "");
         name_only_songs_array.push(x);
     }
     class songs {                                                                  // creating class for object creation
