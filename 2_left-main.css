@@ -1,0 +1,472 @@
+#left-main {
+    width: 30vw;
+    margin: 0px 10px;
+}
+
+.library-portion {
+    background-color: rgb(20, 20, 20);
+    height: 62vh;
+    border-radius: 5px;
+    margin-bottom: 1vh;
+}
+
+#your-library-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+}
+
+#your-library-section :first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+#your-library-section :first-child img {
+    width: 25px;
+    filter: invert(0.7);
+    transition: filter 0.3s
+}
+
+#your-library-section :first-child span {
+    filter: invert(0.3);
+    font-weight: bold;
+    width: 100px;
+    transition: filter 0.3s
+}
+
+#your-library-section> :last-child img {
+    filter: invert(0.7);
+}
+
+
+#your-library-section> :last-child {
+    width: 15px;
+    padding: 10px;
+    background-color: rgb(20, 20, 20);
+    border-radius: 20px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+
+#your-library-section> :last-child:hover {
+    background-color: rgb(40, 40, 40);
+    transform: scale(1.1)
+}
+
+.search {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+.search>img {
+    cursor: pointer;
+    padding: 0px 0px 0px 20px;
+    width: 30px;
+    transition: transform 0.3s;
+}
+
+.search>img:hover {
+    transform: scale(1.05);
+}
+
+/* before button click */
+
+#library {
+    height: 45.8vh;
+    overflow: auto;
+    padding-left: 10px;
+}
+
+#library> :first-child>div {
+    line-height: 30px;
+}
+
+#library> :first-child> :nth-child(2)>div {
+    line-height: 20px;
+}
+
+#library::-webkit-scrollbar {
+    display: none;
+}
+
+#kalu {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    font-weight: lighter;
+    margin: 1vh 10px 1vh 0px;
+    padding: 5px 0px 5px 0px;
+    border-radius: 10px;
+}
+
+#kalu>img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+#kalu> :last-child> :first-child {
+    line-height: 30px;
+}
+
+#number_of_songs {
+    color: #ffcc00;
+    line-height: 30px;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+#library>:first-child>:hover {
+    background-color: rgb(40, 40, 40);
+}
+
+#library> :first-child {
+    line-height: 10px;
+    margin-bottom: 5vh;
+}
+
+.no_song {
+    padding: 15px 0px 15px 0px;
+    font-size: 25px;
+    font-weight: bolder;
+    color: #ffcc00;
+}
+
+#library> :last-child {
+    /* height: 250px; */
+    margin-top: 1vh;
+    padding-bottom: 20px;
+
+}
+
+#library> :last-child> :first-child {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+#library> :last-child> :first-child> :nth-child(1) {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+#library> :last-child> :first-child> :nth-child(2) {
+    font-size: x-large;
+    font-weight: bolder;
+    font-family: cursive;
+    padding-left: 10px;
+}
+
+#library> :last-child> :first-child> :last-child {
+    border-radius: 10px;
+    overflow: auto;
+    height: 120px;
+    padding: 10px;
+}
+
+#library> :last-child> :first-child> :last-child>div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    margin-top: 1vh;
+}
+
+#library> :last-child> :first-child> :last-child>div:hover {
+    background-color: rgb(40, 40, 40);
+}
+
+#library> :last-child> :first-child> :last-child>div :first-child {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    object-fit: cover;
+    /* cursor: pointer; */
+}
+
+#library> :last-child> :first-child> :last-child>div>div {
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: medium;
+    /* text-decoration: none; */
+    /* cursor: pointer; */
+}
+
+#library> :last-child> :first-child> :last-child>div> :last-child {
+    width: 25px;
+    background-color: #ffcc00;
+    padding: 2px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+#library> :last-child> :first-child> :last-child>div> :last-child:hover {
+    transform: scale(1.05);
+}
+
+
+.lower-portion {
+    background-color: rgb(20, 20, 20);
+    height: 20vh;
+    border-radius: 5px;
+    position: relative;
+}
+
+.website-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 11px;
+    font-weight: lighter;
+    gap: 20px;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.website-info_all {
+    text-decoration: none;
+    color: white;
+    filter: invert(0.3);
+    transition: filter 0.Z;
+}
+
+.website-info_all:hover {
+    filter: none;
+}
+
+#cookies {
+    font-size: 12px;
+    padding: 0px 15px;
+    cursor: pointer;
+    filter: invert(0.3);
+}
+
+#cookies:hover {
+    filter: invert(0);
+    text-decoration: underline;
+}
+
+
+#language-changing {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#language-changing-innerdiv {
+    padding: 5px 10px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.462);
+    position: absolute;
+    bottom: 2vh;
+    right: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    transition: border 0.3s, transform 0.3s;
+    cursor: pointer;
+}
+
+#language-changing :first-child img {
+    width: 15px;
+    filter: invert(1);
+    /* transition: transform 0.3s; */
+}
+
+#language-changing-innerdiv span {
+    color: white;
+    font-size: 13px;
+    /* transition: transform 0.3s; */
+}
+
+@media screen and (max-width:1300px) {
+    .library-portion {
+        height: 62vh;
+    }
+}
+
+@media screen and (max-width:1050px) {
+    #library {
+        padding-left: 5px;
+    }
+}
+
+@media screen and (max-width:475px) {
+    #left-main {
+        width: 80px;
+    }
+
+    #your-library-section {
+        padding: 10px 10px;
+    }
+    .search>img{
+        padding: 0px 0px 0px 10px;
+    }
+    #your-library-section :first-child img {
+        width: 30px;
+    }
+/* done */
+    .search span {
+        display: none;
+    }
+/* done */
+    #your-library-section :first-child span {
+        display: none;
+    }
+/* done */
+    #your-library-section> :last-child img{
+        display: none;
+    }
+
+    #library {
+        height: 70vh;
+    }
+
+    #kalu {
+        margin: 1vh 5px 0px 0px;
+    }
+    #kalu> img{
+        width: 40px;
+        height: 40px;
+    }
+/*done*/
+    #library> :first-child>.all_song_list>div {
+        display: none;
+    }
+
+    #library> :first-child>.all_song_list> :first-child {
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+    }
+
+    #library> :first-child>.all_song_list> :last-child {
+        width: 10px;
+    }
+
+    #library> :last-child> :first-child> :last-child {
+        padding: 5px 0px 0px 0px;
+    }
+
+    #library> :first-child>div {
+        line-height: 20px;
+        font-size: 15px;
+    }
+
+    #library div:hover {
+        background-color: rgb(20, 20, 20);
+    }
+/*done*/
+    #kalu> :last-child {
+        display: none;
+    }
+/*done*/
+    #library> :last-child> :first-child> :nth-child(2) {
+        display: none;
+    }
+
+    #library> :last-child> :first-child> :last-child>div :first-child {
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+    }
+/*done*/
+    #library> :last-child> :first-child> :last-child>div>div {
+        display: none;
+    }
+
+    #library> :last-child> :first-child> :last-child>div> :last-child {
+        width: 10px;
+    }
+
+    .lower-portion {
+        display: none;
+    }
+
+    .library-portion {
+        height: 77vh;
+    }
+}
+
+@media (max-height: 1000px) {
+    .library-portion {
+        height: 83vh;
+    }
+}
+
+@media (max-height: 790px) {
+    .library-portion {
+        height: 62vh;
+    }
+}
+
+@media (max-height: 750px) {
+    .library-portion {
+        height: 73vh;
+    }
+}
+
+@media (max-height: 710px) {
+    .library-portion {
+        height: 62vh;
+    }
+}
+
+@media (max-height: 700px) {
+    .library-portion {
+        height: 77vh;
+    }
+}
+
+@media (max-height: 600px) {
+    .library-portion {
+        height: 61vh;
+    }
+}
+
+@media screen and (max-width:835px) {
+    #left-main {
+        margin: 0px 10px 0px 0px;
+    }
+
+    #library> :last-child> :first-child> :nth-child(1) {
+        width: 210px;
+        height: 210px;
+    }
+
+    #library> :last-child> :first-child {
+        margin-right: 0px;
+    }
+}
+
+@media (max-height: 700px) {
+    .lower-portion {
+        height: 15vh;
+    }
+}
+
+@media screen and (max-width:475px) {
+    #library> :last-child> :first-child> :nth-child(1) {
+        width: 75px;
+        height: 70px;
+    }
+}
+
+.display_none{
+    display: none;
+}
