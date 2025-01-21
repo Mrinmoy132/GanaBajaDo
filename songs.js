@@ -554,7 +554,7 @@ language_changing_innerdiv.addEventListener('mouseout', () => {
                     <a href="" class="website-info_all">Accessibility</a>
                 </div>
                 <div id="language-changing">
-                    <div id="language-changing-innerdiv">
+                    <div id="language-changing-innerdiv" style="display: none;">
                         <img src="svg/left_main_browser.svg" alt="">
                         <span id="english">English</span>
                     </div>
