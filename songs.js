@@ -769,6 +769,8 @@ language_changing_innerdiv.addEventListener('mouseout', () => {
                 e.firstElementChild.nextElementSibling.style.fontSize = "12px"
             })
             document.getElementById("your-library-section").nextElementSibling.firstElementChild.addEventListener('click', () => {
+                            document.getElementById("kalu").lastElementChild.style.display = "block"
+                            document.getElementById("kalu").lastElementChild.firstElementChild.style.lineHeight = "20px"
                 Array.from(document.getElementById("library").firstElementChild.getElementsByClassName("all_song_list")).forEach(e => {
                     e.firstElementChild.nextElementSibling.style.display = "block";
                     e.firstElementChild.nextElementSibling.style.fontSize = "12px"
