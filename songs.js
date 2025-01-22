@@ -699,7 +699,18 @@ language_changing_innerdiv.addEventListener('mouseout', () => {
             document.getElementById("kalu").lastElementChild.firstElementChild.style.lineHeight = "20px";
 
             //artist name
-            document.getElementById("library").lastElementChild.firstElementChild.firstElementChild.nextElementSibling.style.display = "block";
+            try {
+                const element = document.getElementById("library").lastElementChild.firstElementChild.firstElementChild.nextElementSibling;
+            
+                if (element) {
+                    element.style.display = "block";
+                } else {
+                    throw new Error("Element not found.");
+                }
+            } catch (error) {
+                console.error("An error occurred:", error.message);
+            }
+            // document.getElementById("library").lastElementChild.firstElementChild.firstElementChild.nextElementSibling.style.display = "block";
 
             Array.from(document.getElementsByClassName("artist_song_count")).forEach(e => {
                 //song name in artist list
@@ -734,7 +745,18 @@ language_changing_innerdiv.addEventListener('mouseout', () => {
             document.getElementById("kalu").lastElementChild.style.display = "none";
 
             //artist name
-            document.getElementById("library").lastElementChild.firstElementChild.firstElementChild.nextElementSibling.style.display = "none";
+            try {
+                const element = document.getElementById("library").lastElementChild.firstElementChild.firstElementChild.nextElementSibling;
+            
+                if (element) {
+                    element.style.display = "none";
+                } else {
+                    throw new Error("Element not found.");
+                }
+            } catch (error) {
+                console.error("An error occurred:", error.message);
+            }
+            // document.getElementById("library").lastElementChild.firstElementChild.firstElementChild.nextElementSibling.style.display = "none";
 
             Array.from(document.getElementsByClassName("artist_song_count")).forEach(e => {
                 //song name in artist list
@@ -748,7 +770,29 @@ language_changing_innerdiv.addEventListener('mouseout', () => {
         }
 
     })
-    
+    document.getElementById("your-library-section").nextElementSibling.firstElementChild.addEventListener('click', () => {
+        if (parseInt(window.getComputedStyle(document.getElementById("left-main")).width) < 200 && parseInt(window.getComputedStyle(document.getElementById("left-main")).width) != 80) {
+            //Your liked songs part and lineheight will be visible
+            document.getElementById("kalu").lastElementChild.style.display = "block";
+            document.getElementById("kalu").lastElementChild.firstElementChild.style.lineHeight = "20px";
+
+            Array.from(document.getElementById("library").firstElementChild.getElementsByClassName("all_song_list")).forEach(e => {
+                //song name wishlist
+                e.firstElementChild.nextElementSibling.style.display = "block";
+                e.firstElementChild.nextElementSibling.style.fontSize = "12px";
+            });
+        }
+        else if (parseInt(window.getComputedStyle(document.getElementById("left-main")).width) === 80) {
+            //Your liked songs part and lineheight will be visible
+            document.getElementById("kalu").lastElementChild.style.display = "none";
+            document.getElementById("kalu").lastElementChild.firstElementChild.style.lineHeight = "20px";
+            Array.from(document.getElementById("library").firstElementChild.getElementsByClassName("all_song_list")).forEach(e => {
+                //song name wishlist
+                e.firstElementChild.nextElementSibling.style.display = "none";
+                e.firstElementChild.nextElementSibling.style.fontSize = "12px";
+            });
+        }
+    })
     const artist_songs_arr = [arr_sonu, arr_ar, arr_rahat, arr_shreya, arr_kk, arr_javed]
     Array.from(document.querySelectorAll('.playlist-row')).forEach((e, i) => {
         let btn_of_artist = e.firstElementChild.firstElementChild.firstElementChild;
