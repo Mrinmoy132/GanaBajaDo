@@ -735,7 +735,7 @@ language_changing_innerdiv.addEventListener('mouseout', () => {
                             play_button_wishlist();
                             plus_bar();
                         }
-                    })
+                    });
                 }
             }
             else {
@@ -744,18 +744,19 @@ language_changing_innerdiv.addEventListener('mouseout', () => {
                 document.getElementById("playpause").src = "svg/play.svg";
                 audio.pause();
             }
-        })
-    })
+        });
+    });
     document.getElementById("main-library-svg").addEventListener('click', () => {
         let left_main = document.getElementById("left-main");
-        console.log(left_main.offsetWidth)
+        console.log(left_main.offsetWidth);
         let currentWidth = parseInt(window.getComputedStyle(left_main).width);
         if (currentWidth === 80) {
-            document.getElementById("main-library-svg").src = "svg/collapse.svg"
+            document.getElementById("main-library-svg").src = "svg/collapse.svg";
             left_main.style.width = "200px";
+
             Array.from(document.getElementById("scrollContainer_first").getElementsByClassName("all_song_list")).forEach(e => {
-                e.style.width = "300px"
-            })
+                e.style.width = "300px";
+            });
             //"show wishlist" will be visible
             document.getElementById("your-library-section").nextElementSibling.lastElementChild.style.display = "inline";
             //"Your library" will be visible
@@ -763,91 +764,105 @@ language_changing_innerdiv.addEventListener('mouseout', () => {
             //"+" will be visible
             document.getElementById("your-library-section").lastElementChild.firstElementChild.style.display = "inline";
 
-            Array.from(document.getElementById("library").firstElementChild.getElementsByClassName("all_song_list")).forEach(e => {
-                e.firstElementChild.nextElementSibling.style.display = "block";
-                e.firstElementChild.nextElementSibling.style.fontSize = "12px";
-            })
-            Array.from(document.getElementsByClassName("playlist-row")).forEach(e => {
-                let btn_of_artist = e.firstElementChild.firstElementChild.firstElementChild;
-                btn_of_artist.addEventListener('click', () => {
-                    Array.from(document.getElementsByClassName("artist_song_count")).forEach(element => {
-                        document.getElementById("library").lastElementChild.firstElementChild.firstElementChild.nextElementSibling.style.display = "block";
-                        element.firstElementChild.nextElementSibling.style.display = "block"
-                        element.firstElementChild.nextElementSibling.style.fontSize = "12px"
-                        element.style.marginRight = "10px";
-                    })
-                })
-            })
-            document.getElementById("kalu").lastElementChild.style.display = "block"
-            document.getElementById("kalu").lastElementChild.firstElementChild.style.lineHeight = "20px"
+
+            //Your liked songs part and lineheight will be visible
+            document.getElementById("kalu").lastElementChild.style.display = "block";
+            document.getElementById("kalu").lastElementChild.firstElementChild.style.lineHeight = "20px";
+
+            //artist name
             document.getElementById("library").lastElementChild.firstElementChild.firstElementChild.nextElementSibling.style.display = "block";
+
             Array.from(document.getElementsByClassName("artist_song_count")).forEach(e => {
+                //song name in artist list
                 e.firstElementChild.nextElementSibling.style.display = "block"
                 e.firstElementChild.nextElementSibling.style.fontSize = "12px"
-            })
+            });
+
+            Array.from(document.getElementById("library").firstElementChild.getElementsByClassName("all_song_list")).forEach(e => {
+                //song name wishlist
+                e.firstElementChild.nextElementSibling.style.display = "block";
+                e.firstElementChild.nextElementSibling.style.fontSize = "12px";
+            });
 
 
         } else if (currentWidth < 200) {
-            document.getElementById("main-library-svg").src = "svg/expand.svg"
+            document.getElementById("main-library-svg").src = "svg/expand.svg";
             left_main.style.width = "80px";
             Array.from(document.getElementById("scrollContainer_first").getElementsByClassName("all_song_list")).forEach(e => {
-                e.style.width = "inherit"
-            })
+                e.style.width = "inherit";
+            });
+
+            //"show wishlist" will be visible
             document.getElementById("your-library-section").nextElementSibling.lastElementChild.style.display = "none";
+
+            //"Your library" will be visible
             document.getElementById("your-library-section").firstElementChild.lastElementChild.style.display = "none";
+
+            //"+" will be visible
             document.getElementById("your-library-section").lastElementChild.firstElementChild.style.display = "none";
-            Array.from(document.getElementById("library").firstElementChild.getElementsByClassName("all_song_list")).forEach(e => {
-                e.firstElementChild.nextElementSibling.style.display = "none";
-            })
-            // document.getElementById("your-library-section").nextElementSibling.firstElementChild.addEventListener('click', () => {
-            //     // document.getElementById("kalu").lastElementChild.style.display = "none"
-            //     Array.from(document.getElementById("library").firstElementChild.getElementsByClassName("all_song_list")).forEach(e => {
-            //         e.firstElementChild.nextElementSibling.style.display = "none"
-            //     })
-            // })
-            Array.from(document.querySelectorAll('.playlist-row')).forEach((e, i) => {
-                let btn_of_artist = e.firstElementChild.firstElementChild.firstElementChild;
-                btn_of_artist.addEventListener('click', () => {
-                    Array.from(document.getElementsByClassName("artist_song_count")).forEach(element => {
-                        document.getElementById("library").lastElementChild.firstElementChild.firstElementChild.nextElementSibling.style.display = "none";
-                        element.firstElementChild.nextElementSibling.style.display = "none"
-                        element.style.marginRight = "0px";
-                    })
-                })
-            })
-            document.getElementById("kalu").lastElementChild.style.display = "none"
+
+            //Your liked songs part and lineheight will be visible
+            document.getElementById("kalu").lastElementChild.style.display = "none";
+
+            //artist name
             document.getElementById("library").lastElementChild.firstElementChild.firstElementChild.nextElementSibling.style.display = "none";
+
             Array.from(document.getElementsByClassName("artist_song_count")).forEach(e => {
+                //song name in artist list
                 e.firstElementChild.nextElementSibling.style.display = "none"
-            })
+            });
 
-
+            Array.from(document.getElementById("library").firstElementChild.getElementsByClassName("all_song_list")).forEach(e => {
+                //song name wishlist
+                e.firstElementChild.nextElementSibling.style.display = "none";
+            });
         }
 
     })
     document.getElementById("your-library-section").nextElementSibling.firstElementChild.addEventListener('click', () => {
         if (parseInt(window.getComputedStyle(document.getElementById("left-main")).width) < 200 && parseInt(window.getComputedStyle(document.getElementById("left-main")).width) != 80) {
-            document.getElementById("kalu").lastElementChild.style.display = "block"
-            document.getElementById("kalu").lastElementChild.firstElementChild.style.lineHeight = "20px"
+            //Your liked songs part and lineheight will be visible
+            document.getElementById("kalu").lastElementChild.style.display = "block";
+            document.getElementById("kalu").lastElementChild.firstElementChild.style.lineHeight = "20px";
+
             Array.from(document.getElementById("library").firstElementChild.getElementsByClassName("all_song_list")).forEach(e => {
+                //song name wishlist
                 e.firstElementChild.nextElementSibling.style.display = "block";
-                e.firstElementChild.nextElementSibling.style.fontSize = "12px"
-            //     if(liked_songs.length == 0){
-            //         document.getElementById("kalu").lastElementChild.style.display = "block"
-            // }
-            })
+                e.firstElementChild.nextElementSibling.style.fontSize = "12px";
+            });
         }
-        else if(parseInt(window.getComputedStyle(document.getElementById("left-main")).width) === 80){
-            document.getElementById("kalu").lastElementChild.style.display = "none"
-            document.getElementById("kalu").lastElementChild.firstElementChild.style.lineHeight = "20px"
+        else if (parseInt(window.getComputedStyle(document.getElementById("left-main")).width) === 80) {
+            //Your liked songs part and lineheight will be visible
+            document.getElementById("kalu").lastElementChild.style.display = "none";
+            document.getElementById("kalu").lastElementChild.firstElementChild.style.lineHeight = "20px";
             Array.from(document.getElementById("library").firstElementChild.getElementsByClassName("all_song_list")).forEach(e => {
+                //song name wishlist
                 e.firstElementChild.nextElementSibling.style.display = "none";
-                e.firstElementChild.nextElementSibling.style.fontSize = "12px"
-            })
-            // if(liked_songs.length == 0){
-            //         document.getElementById("kalu").lastElementChild.style.display = "none"
-            // }
+                e.firstElementChild.nextElementSibling.style.fontSize = "12px";
+            });
         }
+    })
+
+    Array.from(document.getElementsByClassName("playlist-row")).forEach(e => {
+        let btn_of_artist = e.firstElementChild.firstElementChild.firstElementChild;
+        btn_of_artist.addEventListener('click', () => {
+            if (parseInt(window.getComputedStyle(document.getElementById("left-main")).width) < 200 && parseInt(window.getComputedStyle(document.getElementById("left-main")).width) !== 80) {
+                Array.from(document.getElementsByClassName("artist_song_count")).forEach(element => {
+                    document.getElementById("library").lastElementChild.firstElementChild.firstElementChild.nextElementSibling.style.display = "block";
+                    element.firstElementChild.nextElementSibling.style.display = "block"
+                    element.firstElementChild.nextElementSibling.style.fontSize = "12px"
+                    element.style.marginRight = "10px";
+                })
+            }
+            else if (parseInt(window.getComputedStyle(document.getElementById("left-main")).width) === 80) {
+                Array.from(document.getElementsByClassName("artist_song_count")).forEach(element => {
+                    document.getElementById("library").lastElementChild.firstElementChild.firstElementChild.nextElementSibling.style.display = "none";
+                    element.firstElementChild.nextElementSibling.style.display = "none"
+                    element.firstElementChild.nextElementSibling.style.fontSize = "12px"
+                    element.style.marginRight = "10px";
+                })
+            }
+        })
     })
 
 })()
