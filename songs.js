@@ -753,28 +753,19 @@ language_changing_innerdiv.addEventListener('mouseout', () => {
         if (currentWidth === 80) {
             document.getElementById("main-library-svg").src = "svg/collapse.svg"
             left_main.style.width = "200px";
-            // document.getElementById("language-changing-innerdiv").style.display = 'none';
             Array.from(document.getElementById("scrollContainer_first").getElementsByClassName("all_song_list")).forEach(e => {
-                // e.firstElementChild.nextElementSibling.style.fontSize = "5px";
                 e.style.width = "300px"
             })
-            // left_main.style.position = "absolute";
-            // left_main.style.left = "0px";
-            // left_main.style.zIndex = "10";
+            //"show wishlist" will be visible
             document.getElementById("your-library-section").nextElementSibling.lastElementChild.style.display = "inline";
+            //"Your library" will be visible
             document.getElementById("your-library-section").firstElementChild.lastElementChild.style.display = "inline";
+            //"+" will be visible
             document.getElementById("your-library-section").lastElementChild.firstElementChild.style.display = "inline";
+
             Array.from(document.getElementById("library").firstElementChild.getElementsByClassName("all_song_list")).forEach(e => {
                 e.firstElementChild.nextElementSibling.style.display = "block";
-                e.firstElementChild.nextElementSibling.style.fontSize = "12px"
-            })
-            document.getElementById("your-library-section").nextElementSibling.firstElementChild.addEventListener('click', () => {
-                            document.getElementById("kalu").lastElementChild.style.display = "block"
-                            document.getElementById("kalu").lastElementChild.firstElementChild.style.lineHeight = "20px"
-                Array.from(document.getElementById("library").firstElementChild.getElementsByClassName("all_song_list")).forEach(e => {
-                    e.firstElementChild.nextElementSibling.style.display = "block";
-                    e.firstElementChild.nextElementSibling.style.fontSize = "12px"
-                })
+                e.firstElementChild.nextElementSibling.style.fontSize = "12px";
             })
             Array.from(document.getElementsByClassName("playlist-row")).forEach(e => {
                 let btn_of_artist = e.firstElementChild.firstElementChild.firstElementChild;
@@ -799,12 +790,6 @@ language_changing_innerdiv.addEventListener('mouseout', () => {
         } else if (currentWidth < 200) {
             document.getElementById("main-library-svg").src = "svg/expand.svg"
             left_main.style.width = "80px";
-            // left_main.style.position = "relative";
-            // left_main.style.left = "0px";
-            // left_main.style.zIndex = "10";
-            // Array.from(document.getElementsByClassName("all_song_list")).forEach(e => {
-            //     e.firstElementChild.nextElementSibling.style.fontSize = "medium";
-            // })
             Array.from(document.getElementById("scrollContainer_first").getElementsByClassName("all_song_list")).forEach(e => {
                 e.style.width = "inherit"
             })
@@ -814,11 +799,12 @@ language_changing_innerdiv.addEventListener('mouseout', () => {
             Array.from(document.getElementById("library").firstElementChild.getElementsByClassName("all_song_list")).forEach(e => {
                 e.firstElementChild.nextElementSibling.style.display = "none";
             })
-            document.getElementById("your-library-section").nextElementSibling.firstElementChild.addEventListener('click', () => {
-                Array.from(document.getElementById("library").firstElementChild.getElementsByClassName("all_song_list")).forEach(e => {
-                    e.firstElementChild.nextElementSibling.style.display = "none"
-                })
-            })
+            // document.getElementById("your-library-section").nextElementSibling.firstElementChild.addEventListener('click', () => {
+            //     // document.getElementById("kalu").lastElementChild.style.display = "none"
+            //     Array.from(document.getElementById("library").firstElementChild.getElementsByClassName("all_song_list")).forEach(e => {
+            //         e.firstElementChild.nextElementSibling.style.display = "none"
+            //     })
+            // })
             Array.from(document.querySelectorAll('.playlist-row')).forEach((e, i) => {
                 let btn_of_artist = e.firstElementChild.firstElementChild.firstElementChild;
                 btn_of_artist.addEventListener('click', () => {
@@ -837,6 +823,32 @@ language_changing_innerdiv.addEventListener('mouseout', () => {
 
 
         }
+
+    })
+    document.getElementById("your-library-section").nextElementSibling.firstElementChild.addEventListener('click', () => {
+        if (parseInt(window.getComputedStyle(document.getElementById("left-main")).width) < 200 && parseInt(window.getComputedStyle(document.getElementById("left-main")).width) != 80) {
+            document.getElementById("kalu").lastElementChild.style.display = "block"
+            document.getElementById("kalu").lastElementChild.firstElementChild.style.lineHeight = "20px"
+            Array.from(document.getElementById("library").firstElementChild.getElementsByClassName("all_song_list")).forEach(e => {
+                e.firstElementChild.nextElementSibling.style.display = "block";
+                e.firstElementChild.nextElementSibling.style.fontSize = "12px"
+            //     if(liked_songs.length == 0){
+            //         document.getElementById("kalu").lastElementChild.style.display = "block"
+            // }
+            })
+        }
+        else if(parseInt(window.getComputedStyle(document.getElementById("left-main")).width) === 80){
+            document.getElementById("kalu").lastElementChild.style.display = "none"
+            document.getElementById("kalu").lastElementChild.firstElementChild.style.lineHeight = "20px"
+            Array.from(document.getElementById("library").firstElementChild.getElementsByClassName("all_song_list")).forEach(e => {
+                e.firstElementChild.nextElementSibling.style.display = "none";
+                e.firstElementChild.nextElementSibling.style.fontSize = "12px"
+            })
+            // if(liked_songs.length == 0){
+            //         document.getElementById("kalu").lastElementChild.style.display = "none"
+            // }
+        }
     })
 
 })()
+
