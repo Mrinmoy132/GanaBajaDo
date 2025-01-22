@@ -495,4 +495,7 @@
     .library-portion {
         height: 83vh;
     }
+    #library> :last-child> :first-child> :nth-child(2){
+        padding-left: 0px;
+    }
 }
