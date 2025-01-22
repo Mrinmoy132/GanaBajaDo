@@ -674,78 +674,7 @@ language_changing_innerdiv.addEventListener('mouseout', () => {
     // Initial button visibility check
     updateButtonVisibility_second();
 
-    const artist_songs_arr = [arr_sonu, arr_ar, arr_rahat, arr_shreya, arr_kk, arr_javed]
-    Array.from(document.querySelectorAll('.playlist-row')).forEach((e, i) => {
-        let btn_of_artist = e.firstElementChild.firstElementChild.firstElementChild;
-        btn_of_artist.addEventListener('click', () => {
-            let mufasa = "";
-            for (let index = 0; index < artist_songs_arr[i].length; index++) {
-                mufasa +=
-                    `<div class = "artist_song_count">
-                    <img src="${artist_songs_arr[i][index].poster}" alt="lol">
-                    <div>${artist_songs_arr[i][index].only_name_of_song}</div>
-                    <img title="Play/Pause" src="svg/play.svg" alt="">
-                </div>`;
-            }
-            let artist_poster = e.firstElementChild.firstElementChild.nextElementSibling.firstElementChild.src;
-            let artist_name = e.firstElementChild.lastElementChild.innerHTML;
-            library(artist_poster, artist_name, mufasa);
-            if (btn_of_artist.src.endsWith("svg/play.svg")) {
-                play_button_artist();
-                btn_of_artist.src = "svg/pause.svg";
-                libraries.lastElementChild.firstElementChild.lastElementChild.setAttribute('id', "playlists-songs");
-                let song_list = document.getElementById("playlists-songs");
-                song_list.firstElementChild.lastElementChild.src = "svg/pause.svg";
-                for (let j = 0; j < songs_arr.length; j++) {
-                    if (song_list.children[0].firstElementChild.nextElementSibling.textContent == songs_arr[j].only_name_of_song) {
-                        currentIndex = j;
-                    }
-                }
-                audio.src = songs_arr[currentIndex].song_link;
-                audio.play();
-                updatecurrent_audio();
-                document.getElementById("playpause").src = "svg/pause.svg";
-                play_button_wishlist();
-                plus_bar();
-                for (let index = 0; index < artist_songs_arr[i].length; index++) {
-                    song_list.children[index].lastElementChild.addEventListener('click', () => {
-                        if (song_list.children[index].lastElementChild.src.endsWith("svg/play.svg")) {
-                            play_button_library_artist();
-                            song_list.children[index].lastElementChild.src = "svg/pause.svg";
-                            for (let k = 0; k < songs_arr.length; k++) {
-                                if (song_list.children[index].firstElementChild.nextElementSibling.textContent == songs_arr[k].only_name_of_song) {
-                                    currentIndex = k;
-                                }
-                            }
-                            audio.src = songs_arr[currentIndex].song_link;
-                            audio.play();
-                            play_button_all();
-                            play_button_wishlist();
-                            document.getElementById("playpause").src = "svg/pause.svg";
-                            btn_of_artist.src = "svg/pause.svg"
-                            updatecurrent_audio();
-                            plus_bar();
-                        }
-                        else {
-                            song_list.children[index].lastElementChild.src = "svg/play.svg"
-                            audio.pause();
-                            document.getElementById("playpause").src = "svg/play.svg";
-                            btn_of_artist.src = "svg/play.svg";
-                            play_button_all();
-                            play_button_wishlist();
-                            plus_bar();
-                        }
-                    });
-                }
-            }
-            else {
-                btn_of_artist.src = "svg/play.svg";
-                libraries.lastElementChild.innerHTML = "";
-                document.getElementById("playpause").src = "svg/play.svg";
-                audio.pause();
-            }
-        });
-    });
+    
     document.getElementById("main-library-svg").addEventListener('click', () => {
         let left_main = document.getElementById("left-main");
         console.log(left_main.offsetWidth);
@@ -864,6 +793,78 @@ language_changing_innerdiv.addEventListener('mouseout', () => {
             }
         })
     })
+    const artist_songs_arr = [arr_sonu, arr_ar, arr_rahat, arr_shreya, arr_kk, arr_javed]
+    Array.from(document.querySelectorAll('.playlist-row')).forEach((e, i) => {
+        let btn_of_artist = e.firstElementChild.firstElementChild.firstElementChild;
+        btn_of_artist.addEventListener('click', () => {
+            let mufasa = "";
+            for (let index = 0; index < artist_songs_arr[i].length; index++) {
+                mufasa +=
+                    `<div class = "artist_song_count">
+                    <img src="${artist_songs_arr[i][index].poster}" alt="lol">
+                    <div>${artist_songs_arr[i][index].only_name_of_song}</div>
+                    <img title="Play/Pause" src="svg/play.svg" alt="">
+                </div>`;
+            }
+            let artist_poster = e.firstElementChild.firstElementChild.nextElementSibling.firstElementChild.src;
+            let artist_name = e.firstElementChild.lastElementChild.innerHTML;
+            library(artist_poster, artist_name, mufasa);
+            if (btn_of_artist.src.endsWith("svg/play.svg")) {
+                play_button_artist();
+                btn_of_artist.src = "svg/pause.svg";
+                libraries.lastElementChild.firstElementChild.lastElementChild.setAttribute('id', "playlists-songs");
+                let song_list = document.getElementById("playlists-songs");
+                song_list.firstElementChild.lastElementChild.src = "svg/pause.svg";
+                for (let j = 0; j < songs_arr.length; j++) {
+                    if (song_list.children[0].firstElementChild.nextElementSibling.textContent == songs_arr[j].only_name_of_song) {
+                        currentIndex = j;
+                    }
+                }
+                audio.src = songs_arr[currentIndex].song_link;
+                audio.play();
+                updatecurrent_audio();
+                document.getElementById("playpause").src = "svg/pause.svg";
+                play_button_wishlist();
+                plus_bar();
+                for (let index = 0; index < artist_songs_arr[i].length; index++) {
+                    song_list.children[index].lastElementChild.addEventListener('click', () => {
+                        if (song_list.children[index].lastElementChild.src.endsWith("svg/play.svg")) {
+                            play_button_library_artist();
+                            song_list.children[index].lastElementChild.src = "svg/pause.svg";
+                            for (let k = 0; k < songs_arr.length; k++) {
+                                if (song_list.children[index].firstElementChild.nextElementSibling.textContent == songs_arr[k].only_name_of_song) {
+                                    currentIndex = k;
+                                }
+                            }
+                            audio.src = songs_arr[currentIndex].song_link;
+                            audio.play();
+                            play_button_all();
+                            play_button_wishlist();
+                            document.getElementById("playpause").src = "svg/pause.svg";
+                            btn_of_artist.src = "svg/pause.svg"
+                            updatecurrent_audio();
+                            plus_bar();
+                        }
+                        else {
+                            song_list.children[index].lastElementChild.src = "svg/play.svg"
+                            audio.pause();
+                            document.getElementById("playpause").src = "svg/play.svg";
+                            btn_of_artist.src = "svg/play.svg";
+                            play_button_all();
+                            play_button_wishlist();
+                            plus_bar();
+                        }
+                    });
+                }
+            }
+            else {
+                btn_of_artist.src = "svg/play.svg";
+                libraries.lastElementChild.innerHTML = "";
+                document.getElementById("playpause").src = "svg/play.svg";
+                audio.pause();
+            }
+        });
+    });
 
 })()
 
