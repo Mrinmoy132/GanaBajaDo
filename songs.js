@@ -10,7 +10,7 @@ searchbar_firstdiv.nextElementSibling.addEventListener("blur", () => {
     searchbar_firstdiv.firstElementChild.style.filter = 'invert(0.7)';
 });
 
-//search button e click korle
+//search button e click korle ja hoy
 searchbar_firstdiv.firstElementChild.addEventListener('click', () => {
     document.getElementById("search-bar").style.outline = '2px solid white';
     searchbar_firstdiv.firstElementChild.style.filter = 'invert(1)';
